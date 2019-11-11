@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0306d78b0bf775ba63d592335d0c435f",
+    "revision": "39d8ce7b4ff4a882283ccbc3179024cd",
     "url": "/journeyplanner/index.html"
   },
   {
-    "revision": "938dd5c216161d47e7d2",
+    "revision": "d0094c04bb486a33a010",
     "url": "/journeyplanner/static/css/main.b737f03b.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/journeyplanner/static/js/2.2fb9e2d6.chunk.js"
   },
   {
-    "revision": "938dd5c216161d47e7d2",
-    "url": "/journeyplanner/static/js/main.eed25260.chunk.js"
+    "revision": "d0094c04bb486a33a010",
+    "url": "/journeyplanner/static/js/main.695fe52f.chunk.js"
   },
   {
     "revision": "f3177354e239fc6d728a",
