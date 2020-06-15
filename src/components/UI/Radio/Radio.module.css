@@ -1,0 +1,52 @@
+.Radio {
+  width: 100%;
+  margin-top: 0.35em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Radio .Option {
+  width: 50%;
+  height: 2.65em;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1em;
+  text-transform: capitalize;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.Radio .Option:hover {
+  background-color: #e8e8e8;
+}
+
+.Radio .Active {
+  color: white;
+  background-color: #3C6AFF;
+}
+
+.Radio .Active:hover {
+  background-color: #3C6AFF;
+}
+/*# sourceMappingURL=Radio.module.css.map */

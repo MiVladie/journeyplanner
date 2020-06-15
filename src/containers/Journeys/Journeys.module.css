@@ -1,0 +1,464 @@
+.Journeys {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.Journeys .Routes {
+  width: 100%;
+  max-height: calc(22.55em - 3.65em);
+  overflow: hidden;
+}
+
+.Journeys .Routes .Journey {
+  width: auto;
+  height: 2.65em;
+  margin: 0 0 1em 0;
+  border: 1.5px solid white;
+  border-radius: 2px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.Journeys .Routes .Journey:hover {
+  border-color: #0943ff;
+}
+
+.Journeys .Routes .Journey:hover .Heading {
+  background-color: #0943ff;
+}
+
+.Journeys .Routes .Journey:active {
+  border-color: #0038ef;
+}
+
+.Journeys .Routes .Journey:active .Heading {
+  background-color: #0038ef;
+}
+
+.Journeys .Routes .Journey:last-of-type {
+  margin-bottom: 0;
+}
+
+.Journeys .Routes .Journey .Heading {
+  width: 100%;
+  height: 2.65em;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper {
+  width: 92.5%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main .Type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main .Type .Icon {
+  width: 1.5em;
+  height: 1.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main .Type .Meta {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: white;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main .Break {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 0.65em;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Main .Break:last-of-type {
+  display: none;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Metadata {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Metadata .Item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-left: 0.75em;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Metadata .Item .Value {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: white;
+}
+
+.Journeys .Routes .Journey .Heading .Wrapper .Metadata .Item .Meta {
+  font-family: 'Lexend Deca';
+  font-size: 0.65em;
+  color: white;
+}
+
+.Journeys .Routes .Journey .Instructions {
+  display: none;
+}
+
+.Journeys .Routes .Selected {
+  height: calc(22.55em - 3.65em - 3px);
+  border-color: #0943ff;
+}
+
+.Journeys .Routes .Selected:active {
+  border-color: #0943ff;
+}
+
+.Journeys .Routes .Selected:active .Heading {
+  background-color: #0943ff;
+}
+
+.Journeys .Routes .Selected:active .Heading:active {
+  background-color: #0038ef;
+}
+
+.Journeys .Routes .Selected .Heading {
+  background-color: #0943ff;
+}
+
+.Journeys .Routes .Selected .Instructions {
+  display: block;
+  width: 100%;
+  height: calc(100% - 2.65em);
+  overflow-y: auto;
+}
+
+.Journeys .Routes .Selected .Instructions::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+.Journeys .Routes .Selected .Instructions::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper {
+  width: 92.5%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction {
+  width: 100%;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content {
+  width: 100%;
+  min-height: 2.65em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Main {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Main .Icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Main .Text {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: white;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Main .Widget {
+  height: 1.5em;
+  min-width: 1.5em;
+  margin: 0 0.5em;
+  padding: 0 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Lexend Deca';
+  font-size: 0.9em;
+  color: white;
+  border-radius: 4px;
+  background-color: #FF3C3C;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Metadata {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-left: 0.75em;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Metadata .Value {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: white;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Content .Metadata .Meta {
+  font-family: 'Lexend Deca';
+  font-size: 0.65em;
+  color: white;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra {
+  margin: 0.25em 0 0.25em 2em;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.25em 0;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Location .Widget {
+  height: 1.5em;
+  min-width: 1.5em;
+  margin-right: 0.5em;
+  padding: 0 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Lexend Deca';
+  font-size: 0.9em;
+  color: white;
+  border-radius: 4px;
+  background-color: #FF3C3C;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Location .Text {
+  font-family: 'Lexend Deca';
+  font-size: 0.9em;
+  color: white;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops {
+  margin: 0.5em 0 0.5em calc(0.75em + 2px);
+  min-height: 0.75em;
+  border-left: 1.5px solid #FF3C3C;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Expand {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 1.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Expand .Icon {
+  width: 1em;
+  height: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 0.35em;
+  background-image: url("../../assets/icons/expand-icon.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Expand .Text {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: #FF3C3C;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Expand .Active {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Stations {
+  padding: 0.2em 0;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Stations .Station {
+  width: 90%;
+  margin: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Stations .Station .Point {
+  display: block;
+  width: 6px;
+  height: 2.5px;
+  background-color: #FF3C3C;
+}
+
+.Journeys .Routes .Selected .Instructions .Wrapper .Instruction .Extra .Stops .Stations .Station .Text {
+  margin-left: 1.5em;
+  font-family: 'Lexend Deca';
+  font-size: 0.85em;
+  color: white;
+}
+
+.Journeys .Routes .Hidden {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  border: none;
+}
+
+.Journeys .Routes .Hidden .Heading {
+  display: none;
+  opacity: 0;
+}
+
+.Journeys .Replan {
+  display: block;
+  width: 65%;
+  height: 2.65em;
+  margin: 1em auto 0;
+  border: none;
+  background: none;
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  color: white;
+  background-color: #3C6AFF;
+  border-radius: 2px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.Journeys .Replan:hover {
+  background-color: #0943ff;
+}
+
+.Journeys .Replan:disabled {
+  background-color: #c8c8c8;
+}
+
+.Journeys .Replan:active {
+  background-color: #0038ef;
+}
+
+@media (min-width: 720px) {
+  .Journeys {
+    width: 92.5%;
+  }
+  .Journeys .Replan {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .Journeys {
+    width: 90%;
+  }
+  .Journeys .Routes {
+    height: calc(22.55em - 3.65em);
+  }
+}
+/*# sourceMappingURL=Journeys.module.css.map */

@@ -1,0 +1,46 @@
+$blue: #3C6AFF;
+
+.Radio {
+    width: 100%;
+    margin-top: 0.35em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2px;
+    overflow: hidden;
+
+    flex-wrap: wrap;
+
+    .Option {
+        width: 50%;
+        height: 2.65em;
+
+        background-color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 1em;
+        text-transform: capitalize;
+
+        transition: all 0.15s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(232, 232, 232);
+        }
+    }
+
+    .Active {
+        color: white;
+        background-color: $blue;
+
+        &:hover {
+            background-color: $blue;
+        }
+    }
+}

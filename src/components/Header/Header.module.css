@@ -1,0 +1,69 @@
+.Header {
+  width: 100%;
+  margin-bottom: 1.5em;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Header .Wrapper {
+  width: 95%;
+  min-height: 4.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.Header .Wrapper h1 {
+  font-family: 'Lexend Deca';
+  font-size: 2.5em;
+  color: white;
+}
+
+.Header .Wrapper ul {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Header .Wrapper ul li:nth-child(2) {
+  margin: 4px 0;
+}
+
+.Header .Wrapper ul li p {
+  font-family: 'Lexend Deca';
+  font-size: 1em;
+  text-transform: capitalize;
+  line-height: 1.25em;
+  color: white;
+}
+
+.Header .Wrapper ul li p span {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.75);
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 720px) {
+  .Header .Wrapper {
+    width: 92.5%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .Header .Wrapper {
+    width: 90%;
+  }
+  .Header .Wrapper ul {
+    white-space: nowrap;
+  }
+}
+/*# sourceMappingURL=Header.module.css.map */

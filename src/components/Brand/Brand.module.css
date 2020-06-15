@@ -1,0 +1,64 @@
+.Brand {
+  display: none;
+  -webkit-animation: fadeIn 0.65s 0s ease-out forwards;
+          animation: fadeIn 0.65s 0s ease-out forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    -webkit-transform: translateY(2em);
+            transform: translateY(2em);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    -webkit-transform: translateY(2em);
+            transform: translateY(2em);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1025px) {
+  .Brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .Brand h1, .Brand h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.35em 0.25em;
+    font-family: 'Lexend Deca';
+    text-shadow: 0 0px 4px rgba(0, 0, 0, 0.12);
+    text-align: end;
+    color: #302E2A;
+    background-color: white;
+  }
+  .Brand h1 {
+    font-size: 3em;
+  }
+  .Brand h2 {
+    font-size: 2em;
+  }
+}
+/*# sourceMappingURL=Brand.module.css.map */

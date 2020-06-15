@@ -1,0 +1,45 @@
+.Brand {
+    display: none;
+
+    animation: fadeIn 0.65s 0s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(2em);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1025px) {
+    .Brand {
+        display: flex;
+        align-items: flex-end;
+        flex-flow: column;
+
+        h1, h2 {
+            width: fit-content;
+            padding: 0.35em 0.25em;
+
+            font-family: 'Lexend Deca';
+            text-shadow: 0 0px 4px rgba(0, 0, 0, 0.12); 
+            text-align: end; 
+
+            color: #302E2A;
+            background-color: white
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+    }
+}

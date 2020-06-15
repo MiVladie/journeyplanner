@@ -1,0 +1,103 @@
+$blue: #3C6AFF;
+
+.Dropdown {
+    width: 100%;
+    height: 2.65em;
+
+    margin-top: 0.35em;
+
+    background-color: white;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    
+    position: relative;
+
+    .Value {
+        width: 100%;
+        font-family: 'Lexend Deca';
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .Expand {
+        width: 2.5em;
+        height: 2.5em;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        top: 0;
+        right: 0.15em;
+
+        .Icon {
+            width: 30%;
+            height: 30%;
+
+            background-image: url('../../../assets/icons/dropdown-icon.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transition: all 0.15s;
+
+            filter: brightness(0.15);
+        }
+
+        .Active {
+            transform: rotateX(180deg);
+        }
+    }
+
+    .List {
+        width: 100%;
+
+        position: absolute;
+        left: 0;
+        bottom: calc(2.5em - 1px);
+
+        z-index: 100;
+
+        background-color: white;
+        border-radius: 2px 2px 0 0;
+        overflow: hidden;
+
+        .Item {
+            width: 100%;
+            padding: 0.75em 0;
+
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: $blue;
+
+                .Description {
+                    margin: 0 0.5em 0 1em;
+                    color: white;
+                }
+            }
+            
+            &:active {
+                background-color: darken($blue, 15);
+            }
+            
+            .Description {
+                margin: 0 0.75em;
+
+                font-family: 'Lexend Deca', sans-serif;
+                text-transform: capitalize;
+                color: #444444;
+                
+                transition: margin 0.15s;
+            }
+        }
+    }
+}
