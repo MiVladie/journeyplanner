@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,KAAK,EAAE,IAAI;EAEX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,WAAW,EAAE,QAAQ;CACxB",
-    "sources": [
-        "Resultative.module.scss"
-    ],
-    "names": [],
-    "file": "Resultative.module.css"
-}
