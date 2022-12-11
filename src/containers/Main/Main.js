@@ -15,14 +15,35 @@ const Main = ({ data }) => {
 
 	const dispatch = useStore()[1];
 
+	const getStartEndPosition = (journeyVector, firstJourney) => {
+		const fromLat = parseFloat(journeyVector.from.split(':')[1]) || firstJourney.legs[0].departurePoint.lat;
+		const fromLng = parseFloat(journeyVector.from.split(':')[0]) || firstJourney.legs[0].departurePoint.lon;
+
+		const toLat =
+			parseFloat(journeyVector.to.split(':')[1]) ||
+			firstJourney.legs[firstJourney.legs.length - 1].arrivalPoint.lat;
+		const toLng =
+			parseFloat(journeyVector.to.split(':')[0]) ||
+			firstJourney.legs[firstJourney.legs.length - 1].arrivalPoint.lon;
+
+		return {
+			from: {
+				lat: fromLat,
+				lng: fromLng
+			},
+			to: {
+				lat: toLat,
+				lng: toLng
+			}
+		};
+	};
+
 	const submitHandler = async (values) => {
 		setLoading(true);
 		setError(null);
 
 		let from = values.location.coordinates || values.location.name;
-		let to =
-			values.destination.coordinates ||
-			values.destination.name;
+		let to = values.destination.coordinates || values.destination.name;
 		let mode = '';
 		let date = values.date.replace(/-/g, '');
 		let time = values.time.replace(':', '');
@@ -35,82 +56,36 @@ const Main = ({ data }) => {
 
 			setLoading(false);
 
+			const { from, to } = getStartEndPosition(response.data.journeyVector, response.data.journeys[0]);
+
+			console.log({ response: response.data });
+			console.log({ from, to });
+
 			dispatch('ADD_DATA', {
 				journeys: response.data.journeys,
 				meta: {
 					timeIs: values.timeIs,
-					date:
-						response.data.searchCriteria
-							.dateTime,
+					date: response.data.searchCriteria.dateTime,
 					from: {
 						name: values.location.name,
-						coordinates: {
-							lat: parseFloat(
-								response.data.journeyVector.from.split(
-									':'
-								)[1]
-							),
-							lng: parseFloat(
-								response.data.journeyVector.from.split(
-									':'
-								)[0]
-							),
-						},
+						coordinates: from
 					},
 					to: {
 						name: values.destination.name,
-						coordinates: {
-							lat: parseFloat(
-								response.data.journeyVector.to.split(
-									':'
-								)[1]
-							),
-							lng: parseFloat(
-								response.data.journeyVector.to.split(
-									':'
-								)[0]
-							),
-						},
-					},
-				},
+						coordinates: to
+					}
+				}
 			});
 
 			dispatch('SET_JOURNEY_PATH', [
 				{
 					mode: 'straight',
-					path: [
-						{
-							lat: parseFloat(
-								response.data.journeyVector.from.split(
-									':'
-								)[1]
-							),
-							lng: parseFloat(
-								response.data.journeyVector.from.split(
-									':'
-								)[0]
-							),
-						},
-						{
-							lat: parseFloat(
-								response.data.journeyVector.to.split(
-									':'
-								)[1]
-							),
-							lng: parseFloat(
-								response.data.journeyVector.to.split(
-									':'
-								)[0]
-							),
-						},
-					],
-				},
+					path: [{ ...from }, { ...to }]
+				}
 			]);
 		} catch (error) {
 			let message =
-				error.response && error.response.status === 300
-					? 'Travelling outside London?'
-					: 'Please, try again.';
+				error.response && error.response.status === 300 ? 'Travelling outside London?' : 'Please, try again.';
 
 			setLoading(false);
 			setError("Oops, that's an error! " + message);
@@ -126,15 +101,7 @@ const Main = ({ data }) => {
 		let dateRows = [{ name: 'today' }, { name: 'tomorrow' }];
 
 		let today = new Date();
-		let daysOfWeek = [
-			'Sunday',
-			'Monday',
-			'Tuesday',
-			'Wednesday',
-			'Thursday',
-			'Friday',
-			'Saturday',
-		];
+		let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 		for (let i = 2; i < 7; i++) {
 			let day = daysOfWeek[(today.getDay() + i) % 7];
@@ -159,25 +126,23 @@ const Main = ({ data }) => {
 					fields: [
 						{
 							name: 'location',
-							placeholder:
-								'Enter your location',
+							placeholder: 'Enter your location',
 							type: 'location',
 							detectCurrentLocation: true,
-							required: true,
-						},
-					],
+							required: true
+						}
+					]
 				},
 				{
 					label: 'Where do you want to go?',
 					fields: [
 						{
 							name: 'destination',
-							placeholder:
-								'Enter your destination',
+							placeholder: 'Enter your destination',
 							type: 'location',
-							required: true,
-						},
-					],
+							required: true
+						}
+					]
 				},
 				{
 					label: 'I am..',
@@ -186,22 +151,18 @@ const Main = ({ data }) => {
 							name: 'timeIs',
 							options: [
 								{
-									name:
-										'departing',
-									value:
-										'departing',
+									name: 'departing',
+									value: 'departing'
 								},
 								{
-									name:
-										'arriving',
-									value:
-										'arriving',
-								},
+									name: 'arriving',
+									value: 'arriving'
+								}
 							],
 							type: 'radio',
-							required: true,
-						},
-					],
+							required: true
+						}
+					]
 				},
 				{
 					label: 'When?',
@@ -209,22 +170,22 @@ const Main = ({ data }) => {
 						{
 							name: 'date',
 							options: weekDays(),
-							type: 'dropdown',
+							type: 'dropdown'
 						},
 						{
 							name: 'time',
 							type: 'time',
-							required: true,
-						},
-					],
-				},
+							required: true
+						}
+					]
+				}
 			]}
 			inputs={{
 				location: { name: null, coordinates: null },
 				destination: { name: null, coordinates: null },
 				timeIs: 'departing',
 				date: new Date().toISOString().slice(0, 10),
-				time: new Date().toISOString().slice(11, 16),
+				time: new Date().toISOString().slice(11, 16)
 			}}
 			button='Go!'
 			onSubmit={submitHandler}
@@ -236,9 +197,7 @@ const Main = ({ data }) => {
 	const journeys = <Journeys data={data} onReplan={replanHandler} />;
 
 	return (
-		<div
-			className={classes.Main}
-			style={loading ? { position: 'relative' } : null}>
+		<div className={classes.Main} style={loading ? { position: 'relative' } : null}>
 			{data ? journeys : form}
 		</div>
 	);
