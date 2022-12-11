@@ -58,9 +58,6 @@ const Main = ({ data }) => {
 
 			const { from, to } = getStartEndPosition(response.data.journeyVector, response.data.journeys[0]);
 
-			console.log({ response: response.data });
-			console.log({ from, to });
-
 			dispatch('ADD_DATA', {
 				journeys: response.data.journeys,
 				meta: {
