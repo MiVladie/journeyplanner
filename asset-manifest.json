@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/journeyplanner/static/css/main.ff064158.css",
-    "main.js": "/journeyplanner/static/js/main.686825e8.js",
+    "main.js": "/journeyplanner/static/js/main.41d02b7c.js",
     "static/media/video.mp4": "/journeyplanner/static/media/video.f8f572eb8c8753cb2452.mp4",
     "static/media/background.jpg": "/journeyplanner/static/media/background.cdd4ec1a82f95470b741.jpg",
     "index.html": "/journeyplanner/index.html",
     "main.ff064158.css.map": "/journeyplanner/static/css/main.ff064158.css.map",
-    "main.686825e8.js.map": "/journeyplanner/static/js/main.686825e8.js.map"
+    "main.41d02b7c.js.map": "/journeyplanner/static/js/main.41d02b7c.js.map"
   },
   "entrypoints": [
     "static/css/main.ff064158.css",
-    "static/js/main.686825e8.js"
+    "static/js/main.41d02b7c.js"
   ]
 }
